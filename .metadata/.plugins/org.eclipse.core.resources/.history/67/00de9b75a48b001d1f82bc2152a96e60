@@ -1,0 +1,8 @@
+server.port= 8080
+
+#spring.data.mongodb.uri=mongodb://localhost:27017/product-service
+
+
+spring.data.mongodb.database=Product-Service
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
