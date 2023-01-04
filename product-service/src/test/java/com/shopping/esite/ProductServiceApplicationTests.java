@@ -1,13 +1,67 @@
 package com.shopping.esite;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.testcontainers.containers.MongoDBContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.utility.DockerImageName;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shopping.dto.ProductRequest;
 
 @SpringBootTest
+@AutoConfigureMockMvc
 class ProductServiceApplicationTests {
+	
+//	@Container
+//	static MongoDBContainer container = new MongoDBContainer(DockerImageName.parse("mongo:5.0"));
+	
+	@Autowired
+	private MockMvc mockMvc;
+	
+	@InjectMocks
+	private ProductRequest productRequest;
+	
+	@Autowired
+	private ObjectMapper mapper;
+	
+//	@DynamicPropertySource
+//	static void setProperties(DynamicPropertyRegistry dynamicPropertyRegistry) {
+//		dynamicPropertyRegistry.add("spring.data.mongodb.uri", container::getReplicaSetUrl);
+//	}
 
 	@Test
-	void contextLoads() {
+	void shouldCreateProduct() throws Exception {
+		
+		productRequest =  getProductRequest();
+		String productRequestString =  mapper.writeValueAsString(productRequest);
+		
+		mockMvc.perform(MockMvcRequestBuilders.post("/product/post")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(productRequestString)
+				).andExpect(status().isCreated());
 	}
+	
+	private ProductRequest getProductRequest() {
+		return ProductRequest.builder()
+				.name("nokia")
+				.description("heavy")
+				.price(2000)
+				.build();
+	}
+	
+
 
 }
