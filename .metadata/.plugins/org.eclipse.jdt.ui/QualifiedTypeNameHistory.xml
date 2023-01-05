@@ -9,7 +9,6 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="com.shopping.dto.ProductRequest"/>
     <fullyQualifiedTypeName name="com.shopping.model.Product"/>
     <fullyQualifiedTypeName name="com.shopping.repository.ProductRepository"/>
     <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
@@ -25,5 +24,20 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.springframework.data.annotation.Transient"/>
     <fullyQualifiedTypeName name="com.shopping.dto.DatabaseSequence"/>
+    <fullyQualifiedTypeName name="org.testcontainers.junit.jupiter.Container"/>
+    <fullyQualifiedTypeName name="org.springframework.test.context.DynamicPropertyRegistry"/>
+    <fullyQualifiedTypeName name="org.testcontainers.containers.MongoDBContainer"/>
+    <fullyQualifiedTypeName name="org.springframework.test.context.DynamicPropertySource"/>
+    <fullyQualifiedTypeName name="org.testcontainers.junit.jupiter.Testcontainers"/>
+    <fullyQualifiedTypeName name="org.springframework.test.web.servlet.MockMvc"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.AutoConfiguration"/>
+    <fullyQualifiedTypeName name="org.springframework.test.web.servlet.request.MockMvcRequestBuilders"/>
+    <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.testcontainers.utility.DockerImageName"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeAll"/>
+    <fullyQualifiedTypeName name="com.shopping.dto.ProductRequest"/>
+    <fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
 </qualifiedTypeNameHistroy>
